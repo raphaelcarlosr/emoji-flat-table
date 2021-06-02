@@ -9,7 +9,6 @@ const jsonString = text
     .replace(/icon:/g, '"icon":')
     .replace(/\'/g, '"')
     .replace(/export const EMOJIS = /gi, '{"list": ') 
-    
     + '}';
 fs.writeFileSync('emoji.json', jsonString)
 try {
