@@ -8,3 +8,13 @@
 
 ## Simple emoji list as [flat-data](https://octo.github.com/projects/flat-data), [find your emoji](https://flatgithub.com/raphaelcarlosr/emoji-flat-table)
 
+[![image](https://user-images.githubusercontent.com/483708/120557398-397e6580-c3d4-11eb-9ab6-971b515fea17.png)](https://flatgithub.com/raphaelcarlosr/emoji-flat-table)
+
+## How its works 🙋‍♂
+
+- Using [flat-data](https://octo.github.com/projects/flat-data), this repo has an scheduled action (every day), and it can be viewed on [flatgithub](https://flatgithub.com/)
+- Just it.
+
+## What you can do ✍️
+
+- Search any emoji for any category 😃
