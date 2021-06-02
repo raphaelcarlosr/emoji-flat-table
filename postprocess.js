@@ -13,7 +13,8 @@ const jsonString = text
     .replace(/icon:/g, '"icon":')
     .replace(/\'/g, '"')
     .replace(/export const EMOJIS = /gi, '{"list": ') 
-    
+    + '}';
+
 const json = JSON.parse(jsonString)
 
 // // Step 2: Filter specific data we want to keep and write to a new JSON file
