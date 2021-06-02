@@ -23,8 +23,9 @@ await writeJSON(newFilename, json) // create a new JSON file with just the Bitco
 const list = json.list
 for (let i = 0, l = list.length; i < l; i++) {
     const emoji = list[i];
-    const {name, emojis } = emoji;
-    await writeJSON(name, emojis)    
+    const { name, emojis } = emoji;
+    const fileName = name.toLowerCase();
+    await writeJSON(`${fileName}.json`, emojis)    
 }
 
 // Optionally delete the original file
