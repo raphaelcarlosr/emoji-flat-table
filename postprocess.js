@@ -16,18 +16,18 @@ const jsonString = text
     + '}';
 
 const json = JSON.parse(jsonString)
-
-// // Step 2: Filter specific data we want to keep and write to a new JSON file
-// const currencyRates = Object.values(json.bpi); // convert property values into an array
-// const filteredCurrencyRates = currencyRates.map(rate => ({ 
-//     currency: rate.description,
-//     bitcoinRate: rate.rate
-// }));
-
-// Step 3. Write a new JSON file with our filtered data
 const newFilename = `emoji.json` // name of a new file to be saved
 await writeJSON(newFilename, json) // create a new JSON file with just the Bitcoin price
-console.log("Wrote a post process file")
+
+
+const list = json.list
+for (let i = 0, l = list.length; i < l; i++) {
+    const emoji = list[i];
+    const {name, emojis } = emoji;
+    await writeJSON(name, emojis)    
+}
 
 // Optionally delete the original file
 await removeFile(filename) // equivalent to removeFile('btc-price.json')
+
+console.log("Wrote a post process file")
