@@ -7,7 +7,13 @@ import { readJSON, writeJSON, removeFile, readTXT } from 'https://deno.land/x/fl
 // Step 1: Read the downloaded_filename JSON
 const filename = Deno.args[0] // Same name as downloaded_filename `const filename = 'btc-price.json';`
 const text = await readTXT(filename)
-const jsonString = text.replace(/export const EMOJIS = /gi, '{"emoji": ') + '}';
+const jsonString = text
+    .replace(/emojis:/g, '"emojis":')
+    .replace(/name:/g, '"name":')
+    .replace(/icon:/g, '"icon":')
+    .replace(/\'/g, '"')
+    .replace(/export const EMOJIS = /gi, '{"list": ') 
+    
 const json = JSON.parse(jsonString)
 
 // // Step 2: Filter specific data we want to keep and write to a new JSON file
