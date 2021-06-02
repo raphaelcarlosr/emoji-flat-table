@@ -22,3 +22,9 @@ jobs:
           http_url: https://github.com/github/gemoji/raw/master/db/emoji.json
           postprocess: ./postprocess.js
           downloaded_filename: emoji.data
+      - name: Fetch data
+        uses: githubocto/flat@v3
+        with:
+          http_url: https://github.com/ahkohd/ngx-emoji-picker/raw/master/projects/ngx-emoji-picker/src/lib/misc/emojis.data.ts
+          downloaded_filename: emoji.ts
+          postprocess: ./postprocess-1.js
