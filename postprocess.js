@@ -6,13 +6,9 @@ import { readJSON, writeJSON, removeFile, readTXT } from 'https://deno.land/x/fl
 
 // Step 1: Read the downloaded_filename JSON
 const filename = Deno.args[0] // Same name as downloaded_filename `const filename = 'btc-price.json';`
-let text = await readTXT(filename)
-console.log(text)
-
-text = text.replace(/export const EMOJIS = /gi, '{') + '}';
-console.log(text)
-// const json = await readTXT(filename)
-// console.log(json)
+const text = await readTXT(filename)
+const jsonString = text.replace(/export const EMOJIS = /gi, '{"emoji": ') + '}';
+const json = JSON.parse(jsonString)
 
 // // Step 2: Filter specific data we want to keep and write to a new JSON file
 // const currencyRates = Object.values(json.bpi); // convert property values into an array
@@ -21,10 +17,10 @@ console.log(text)
 //     bitcoinRate: rate.rate
 // }));
 
-// // Step 3. Write a new JSON file with our filtered data
-// const newFilename = `btc-price-postprocessed.json` // name of a new file to be saved
-// await writeJSON(newFilename, filteredCurrencyRates) // create a new JSON file with just the Bitcoin price
-// console.log("Wrote a post process file")
+// Step 3. Write a new JSON file with our filtered data
+const newFilename = `emoji.json` // name of a new file to be saved
+await writeJSON(newFilename, json) // create a new JSON file with just the Bitcoin price
+console.log("Wrote a post process file")
 
 // Optionally delete the original file
-// await removeFile('./btc-price.json') // equivalent to removeFile('btc-price.json')
+await removeFile(filename) // equivalent to removeFile('btc-price.json')
