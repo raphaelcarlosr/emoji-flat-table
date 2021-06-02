@@ -21,13 +21,13 @@ const newFilename = `emoji.json` // name of a new file to be saved
 await writeJSON(newFilename, json) // create a new JSON file with just the Bitcoin price
 
 
-const list = json.list
-for (let i = 0, l = list.length; i < l; i++) {
-    const emoji = list[i];
-    const { name, emojis } = emoji;
-    const fileName = name.toLowerCase();
-    await writeJSON(`${fileName}.json`, emojis)    
-}
+// const list = json.list
+// for (let i = 0, l = list.length; i < l; i++) {
+//     const emoji = list[i];
+//     const { name, emojis } = emoji;
+//     const fileName = name.toLowerCase();
+//     await writeJSON(`${fileName}.json`, emojis)    
+// }
 
 // Optionally delete the original file
 await removeFile(filename) // equivalent to removeFile('btc-price.json')

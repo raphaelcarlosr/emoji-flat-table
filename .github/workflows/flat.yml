@@ -20,5 +20,5 @@ jobs:
         uses: githubocto/flat@v3
         with:
           http_url: https://github.com/github/gemoji/blob/master/db/emoji.json
-          downloaded_filename: emoji.ts
           postprocess: ./postprocess.js
+          downloaded_filename: emoji.data
