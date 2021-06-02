@@ -6,7 +6,7 @@ import { readJSON, writeJSON, removeFile, readTXT } from 'https://deno.land/x/fl
 
 // Step 1: Read the downloaded_filename JSON
 const filename = Deno.args[0] // Same name as downloaded_filename `const filename = 'btc-price.json';`
-import { EMOJIS } from filename
+import { EMOJIS } from './emoji'
 
 console.log(EMOJIS);
 // const json = await readTXT(filename)
