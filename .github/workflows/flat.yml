@@ -19,6 +19,6 @@ jobs:
       - name: Fetch data
         uses: githubocto/flat@v3
         with:
-          http_url: https://github.com/github/gemoji/blob/master/db/emoji.json
+          http_url: https://github.com/github/gemoji/raw/master/db/emoji.json
           postprocess: ./postprocess.js
           downloaded_filename: emoji.data
